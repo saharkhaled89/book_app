@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Books</title>
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/modules.css">
+    <link rel="stylesheet" href="styles/layout.css">
+
+</head>
+
+<body>
+    <%
+    function Book(data) {
+
+
+        this.title = (data.volumeInfo.title)? data.volumeInfo.title : 'N/A';
+        this.author = (data.volumeInfo.authors)?data.volumeInfo.authors : 'N/A';
+        this.ISBN = (data.volumeInfo.type)?data.volumeInfo.industryIdentifiers.type : 'N/A';
+        this.image = (data.volumeInfo.imageLinks)?data.volumeInfo.imageLinks.thumbnail : '';
+        this.description = (data.volumeInfo.description)?data.volumeInfo.description : 'N/A';
+      
+      }
+      %>
+    <header>
+        <h1> Best Books !</h1>
+    </header>
+    <main>
+        <h2> Search Results </h2>
+
+            <div class="thebookdetails">
+                <% if(books){books.forEach( (book) => { data = new Book(book);%>
+                    <p> ** Book Details ** </p><br>
+                    
+                    <img class="bookimage" src=<%=data.image %>><br>
+                    
+
+                    <p class="booktitle">Title <%= data.title %></p>
+                <p class="bookauthor">Author : <%= data.author %></p>
+                <p class="bookdescp">Book Description :<%= data.description %></p> <br><br><br>
+                <% });}else{
+                    %>
+                    <p class="booktitle"> No Books Available</p>
+                <% } %>
+            </div>
+        </main>
+</body>
+
+</html>
