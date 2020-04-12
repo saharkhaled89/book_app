@@ -1,0 +1,40 @@
+/* Styling index ejs  */
+
+main h2 {
+    background-color: dimgrey;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin: 0px auto;
+}
+
+/* Text box and radio button  */
+
+::placeholder { 
+    color: black;
+    opacity: 1;
+  }
+
+  /* Text box input */
+#thesearchbox {
+    margin-left: 55px;
+    margin-right: 55px;
+    margin-top: 30px;
+    padding: 20px;
+    width: 350px ;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: x-large;
+    border-radius: 10px;
+}
+
+  /*show page */
+
+.thebookdetails {
+    position: relative;
+    text-align: center;
+    background-color: rgb(172, 175, 175);
+    border: 3px solid rgb(131, 130, 130);
+    text-decoration-style: solid;
+    justify-content: center;
+    text-shadow: wheat;
+}
